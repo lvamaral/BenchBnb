@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
   entry: './frontend/benchbnb.jsx',
   output: {
-    filename: './bundle.js',
+    filename: './app/assets/javascripts/bundle.js',
   },
   module: {
     loaders: [

@@ -7,7 +7,7 @@ const defaultState = {
   session: {
     currentUser: {
       id: 1,
-      username: 'breakfast'
+      username: 'testuser'
     },
     errors: []
   }
@@ -31,6 +31,8 @@ const SessionReducer = (state = defaultState, action) => {
       }
     });
     return newState;
+    default:
+      return state;
   }
 };
 
