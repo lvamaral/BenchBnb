@@ -19,7 +19,7 @@ class User < ApplicationRecord
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     if user && user.valid_password?(password)
-      user
+      return user
     end
     nil
   end
@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   def password=(password)
     @password = password
-    self.password_digest = BCrypt::Password.create(password)
+    self.password_digest = BCrypt::Password.create(@password)
   end
 
   def valid_password?(password)
